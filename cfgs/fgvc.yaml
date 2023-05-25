@@ -1,0 +1,56 @@
+train_imgs_dir: data/fgvc-aircraft-2013b/images
+train_anns: data/fgvc-aircraft-2013b/annotations/trainval.json
+val_imgs_dir: data/fgvc-aircraft-2013b/images
+val_anns: data/fgvc-aircraft-2013b/annotations/test.json
+test_imgs_dir: data/fgvc-aircraft-2013b/images
+test_anns: data/fgvc-aircraft-2013b/annotations/test.json
+infer_imgs_dir: ""
+save_dir: ""
+
+task: train
+
+batch_size: 2
+class_agnostic_weights: ckpts/deformable-detr_fsod-800_class-agnostic_50epochs.pth
+classes: 100
+dropout: 0.1
+joint_probability: True
+infer_display_thresh: 0.2
+nms_thresh: 0.3
+offset: 0
+refresh_rate: 1
+resume_training: False
+resume_weights: False
+sampler: False
+sparse: True
+supervised: False
+viz_test_batches: 20
+weights: ckpts/deformable-detr_fsod-800_50epochs.pth
+workers: 4
+
+lr_backbone: 2e-5
+lr_detr: 2e-4
+lr_drop: 0.1
+lr_mil: 1e-3
+lr_patience: 0
+lr_step_size: 15
+objectness_scale: 1000
+weight_decay: 1e-4
+
+activation: "relu"
+dec_layers: 6
+dec_points: 4
+dilation: False
+enc_layers: 6
+enc_points: 4
+feature_levels: 4
+feedforward_dim: 1024
+hidden_dim: 256
+heads: 8
+position_embedding: "sine"
+position_embedding_scale: 6.283185307179586 # 2 * pi
+queries: 300
+
+accumulate_grad_batches: 2
+deterministic: True
+gpus: 4
+max_epochs: 30
