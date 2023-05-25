@@ -2,7 +2,7 @@
 
 ![WS-DETR Architecture](ws-detr.png)
 
-Official codebase for the paper: Scaling Novel Object Detection with Weakly Supervised Detection Transformers.
+Official codebase for the paper: [Scaling Novel Object Detection with Weakly Supervised Detection Transformers.](https://arxiv.org/abs/2207.05205)
 
 WS-DETR leverages large-scale fully supervised pretraining to detect hundreds of novel classes using only image-level classification labels.
 
