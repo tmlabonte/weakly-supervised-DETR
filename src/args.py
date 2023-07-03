@@ -22,7 +22,7 @@ def parse_args():
         formatter_class=configargparse.ArgumentDefaultsHelpFormatter)
     
     parser.add_argument(
-        "--config", is_config_file=True, help="config file path", default='/Users/patrickwatters/Projects/reu/weakly-supervised-DETR/cfgs/fgvc.yaml'
+        "--config", is_config_file=True, help="config file path", default='cfgs/fgvc.yaml'
     )
 
     #parserb = Parser(de)
