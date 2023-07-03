@@ -3,7 +3,7 @@
 # Imports other packages.
 from configargparse import Parser
 from pytorch_lightning import Trainer
-
+import configargparse
 # Imports local packages.
 from model.ws_detr import WS_DETR
 
@@ -12,10 +12,21 @@ def parse_args():
     """Parses command line and config file arguments."""
 
     # Instantiates config arg parser with required config file.
-    parser = Parser(
-        args_for_setting_config_path=["-c", "--cfg", "--config"],
-        config_arg_is_required=True,
+    #parser = Parser(
+    #    args_for_setting_config_path=["-c", "--cfg", "--config"],
+    #    config_arg_is_required=True,
+    #)
+    parser = configargparse.ArgumentParser(
+        description='Transcribe text from speech using a speech recognition model on one CPU or GPU',
+        config_file_parser_class=configargparse.YAMLConfigFileParser,
+        formatter_class=configargparse.ArgumentDefaultsHelpFormatter)
+    
+    parser.add_argument(
+        "--config", is_config_file=True, help="config file path", default='/Users/patrickwatters/Projects/reu/weakly-supervised-DETR/cfgs/fgvc.yaml'
     )
+
+    #parserb = Parser(de)
+
 
     # Adds command line, Trainer, and model arguments.
     parser = add_input_args(parser)
