@@ -162,10 +162,10 @@ class DeformableTransformerEncoderLayer(nn.Module):
 
         # self attention
         self.self_attn = MSDeformAttn(
-            dim=args.hidden_dim,
-            feature_levels=args.feature_levels,
-            heads=args.heads,
-            points=args.enc_points,
+            d_model=args.hidden_dim,
+            n_levels=args.feature_levels,
+            n_heads=args.heads,
+            n_points=args.enc_points,
         )
         self.dropout1 = nn.Dropout(args.dropout)
         self.norm1 = nn.LayerNorm(args.hidden_dim)
@@ -236,10 +236,10 @@ class DeformableTransformerDecoderLayer(nn.Module):
 
         # cross attention
         self.cross_attn = MSDeformAttn(
-            dim=args.hidden_dim,
-            feature_levels=args.feature_levels,
-            heads=args.heads,
-            points=args.dec_points,
+            d_model=args.hidden_dim,
+            n_levels=args.feature_levels,
+            n_heads=args.heads,
+            n_points=args.dec_points,
         )
         self.dropout1 = nn.Dropout(args.dropout)
         self.norm1 = nn.LayerNorm(args.hidden_dim)

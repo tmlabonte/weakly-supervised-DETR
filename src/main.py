@@ -111,7 +111,7 @@ def load_trainer(args):
 
     # Sets DDP strategy for multi-GPU training.
     args.strategy = "ddp" if args.gpus > 1 else None
-
+    #args.strategy = None
     # Instantiates PL Trainer using args.
     callbacks = [checkpointer, progress_bar]
     trainer = Trainer.from_argparse_args(args, callbacks=callbacks)
