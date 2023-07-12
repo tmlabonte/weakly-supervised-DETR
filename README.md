@@ -19,7 +19,7 @@ sh make.sh
 
 To download the FGVC-Aircraft and FSOD datasets, use the following command. You can also download the iNaturalist 2017 dataset, but it is quite large, so we suggest starting with FGVC-Aircraft and FSOD.
 
-`python download.py --datasets fgvc fsod`
+`python download.py --datasets fgvc`
 
 To download our FSOD-800 pretrained Deformable DETR checkpoints, use:
 
