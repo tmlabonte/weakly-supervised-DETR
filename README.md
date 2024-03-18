@@ -14,6 +14,7 @@ git clone https://github.com/tmlabonte/weakly-supervised-DETR
 cd weakly-supervised-DETR
 sudo docker run -it --gpus all --privileged --shm-size 32g -v $(pwd):/local tmlabonte/ws-detr:latest
 cd /local
+pip install --upgrade --no-cache-dir gdown
 sh make.sh
 ```
 
